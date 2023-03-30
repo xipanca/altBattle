@@ -1,0 +1,34 @@
+{
+    "name": "altv",
+    "version": "0.1",
+    "description": "alt:V",
+    "main": "",
+    "scripts": {
+        "clean": "rimraf ./resources",
+        "build": "npm run clean && swc ./src -d ./resources --copy-files",
+        "update": "altv-pkg d release",
+        "start": "npm run build && altv-server.exe",
+        "dev": "nodemon --watch \"./src/**\" --ext \"ts\" --exec \"npm run build && altv-server.exe\""
+    },
+    "author": "Xipanca",
+    "license": "ISC",
+    "devDependencies": {
+        "@altv/types-client": "^2.4.7",
+        "@altv/types-natives": "^1.5.3",
+        "@altv/types-server": "^2.6.0",
+        "@altv/types-shared": "^1.3.9",
+        "@altv/types-webview": "^1.0.5",
+        "@swc/cli": "^0.1.57",
+        "@swc/core": "^1.2.186",
+        "@types/node": "^14.6.1",
+        "@types/uuid": "^9.0.1",
+        "altv-pkg": "^2.0.3",
+        "nodemon": "^2.0.16",
+        "rimraf": "^3.0.2",
+        "typescript": "latest"
+    },
+    "type": "module",
+    "dependencies": {
+        "@stuyk/ezmongodb": "^3.0.0"
+    }
+}
